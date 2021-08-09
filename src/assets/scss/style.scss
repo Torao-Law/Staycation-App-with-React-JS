@@ -46,6 +46,11 @@
     font-weight: 500;
     color: $primary;
     font-family: 'Poppins',sans-serif;
+
+    &:hover{
+        text-decoration: none;
+        color: $primary;
+    }
 }
 
 header {
