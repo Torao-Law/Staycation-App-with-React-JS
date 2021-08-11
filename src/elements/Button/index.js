@@ -12,7 +12,7 @@ export default function Button(props) {
     if(props.isSmall) className.push("btn-sm")
     if(props.isBlock) className.push("btn-block")
     if(props.hasShadow) className.push("btn-shadow")
-
+    // eslint-disable-next-line
     const onClick = () => {
         if(props.onClick) props.onClick()
     }
@@ -32,6 +32,7 @@ export default function Button(props) {
     if(props.type === "link") {
         if(props.isExternal) {
             return(
+                // eslint-disable-next-line
                 <a href={props.href} className={className.join(" ")} style={props.style}
                 target={props.target==="_blank"?"_blank":undefined}
                 rel={props.target==="_blank"?"noopener norefferer":undefined}>{props.children}</a>
