@@ -46,7 +46,7 @@ export default function Hero(props) {
                         <div className="col mx-auto" style={{marginRight: 35}}>
                             <img widht="36" height="36" src={IconCity} alt={`${props.data.travelers} Travelers`} />
                             <h6 className="mt-3">
-                                {formatNumber(props.data.travelers)}{" "}
+                                {formatNumber(props.data.cities)}{" "}
                                 <span className="text-gray-500 font-weight-light"> cities</span>
                             </h6>
                         </div>
