@@ -148,7 +148,7 @@
           {
             "_id": "asd1293uasdads1",
             "name": "Kuretakeso",
-            "imageUrl": "/images/image-category-10pngg",
+            "imageUrl": "/images/image-category-10.png",
             "country": "South Korea",
             "city": "Seoul Flore",
             "isPopular": false
@@ -156,7 +156,7 @@
           {
             "_id": "asd1293uasdads1",
             "name": "Arya Duta",
-            "imageUrl": "/images/image-category-11pngg",
+            "imageUrl": "/images/image-category-11.png",
             "country": "South Korea",
             "city": "Seoul Flore",
             "isPopular": true
@@ -164,7 +164,7 @@
           {
             "_id": "asd1293uasdads1",
             "name": "Grand Dhika",
-            "imageUrl": "/images/image-category-12pngg",
+            "imageUrl": "/images/image-category-12.png",
             "country": "South Korea",
             "city": "Seoul Flore",
             "isPopular": false
