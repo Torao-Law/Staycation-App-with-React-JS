@@ -15,7 +15,7 @@ export default class LandingPage extends Component {
                 <Hero data={landingPage.hero} />
                 <MostPicked data={landingPage.mostPicked}/>
                 <Categories data={landingPage.categories}/>
-                <Testimoni></Testimoni>
+                <Testimoni data={landingPage.testimonial}></Testimoni>
             </>
         );
     }
