@@ -5,7 +5,7 @@ import Header from 'parts/Header'
 import landingPage from 'json/landingPage.json'
 import MostPicked from 'parts/MostPicked';
 import Categories from 'parts/Categories';
-import Testimoni from 'parts/Testimoni';
+import Testimony from 'parts/Testimony';
 
 export default class LandingPage extends Component {
     render() {
@@ -13,9 +13,9 @@ export default class LandingPage extends Component {
             <>
                 <Header {...this.props}></Header>
                 <Hero data={landingPage.hero} />
-                <MostPicked data={landingPage.mostPicked}/>
-                <Categories data={landingPage.categories}/>
-                <Testimoni></Testimoni>
+                <MostPicked data={landingPage.mostPicked} />
+                <Categories data={landingPage.categories} />
+                <Testimony data={landingPage.testimonial} />
             </>
         );
     }
