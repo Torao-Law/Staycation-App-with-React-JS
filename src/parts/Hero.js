@@ -1,5 +1,4 @@
 import React from 'react'
-
 import Button from 'elements/Button'
 
 import ImgHero from 'assets/images/picture.png'
@@ -11,13 +10,15 @@ import IconTreasure from 'assets/images/icons/ic_treasure.svg'
 import formatNumber from 'utils/formatNumber'
 
 export default function Hero(props) {
-
     function showMostPicked() {
         window.scrollTo({
             top: props.refMostPicked.current.offsetTop - 30,
-            behavior: "smooth"
+            behavior: "smooth",
+
         })
     }
+
+    console.log('window: ', showMostPicked)
 
     return (
         <section className="container" style={{ marginTop: 80}}>

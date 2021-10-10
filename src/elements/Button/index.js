@@ -1,9 +1,7 @@
 import React from 'react'
 
-import { Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import propTypes from 'prop-types'
-
-
 
 export default function Button(props) {
     const className = [props.className]
@@ -12,7 +10,7 @@ export default function Button(props) {
     if(props.isSmall) className.push("btn-sm")
     if(props.isBlock) className.push("btn-block")
     if(props.hasShadow) className.push("btn-shadow")
-    // eslint-disable-next-line
+
     const onClick = () => {
         if(props.onClick) props.onClick()
     }
@@ -40,14 +38,16 @@ export default function Button(props) {
         }
         else {
             return(
-                <Link to={props.href} className={className.join(" ")} style={props.style}>
+                <Link to={props.href} className={className.join(" ")} style={props.style} onClick={onClick}>
                     {props.children}
                 </Link>
             )
         }
     }
 
-    return<button className={className.join(" ")} style={props.style}>{props.children}</button>
+    return (
+    <button className={className.join(" ")} style={props.style}>{props.children}</button>
+    )
 }
 
 

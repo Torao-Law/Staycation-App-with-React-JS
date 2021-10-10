@@ -12,7 +12,7 @@ export default function Star({className, value, width, height, spacing}) {
     for (let index = 0; index < 5 && index < value - decimals; index++) {
         leftPos = leftPos + width;
         star.push(
-            <div className="star" key={`star`} style={{ left: index * width, height:height, width: width, marginRight: spacing}}>
+            <div className="star" key={`star-${index}`} style={{ left: index * width, height:height, width: width, marginRight: spacing}}>
             </div>
         )
     }
@@ -26,7 +26,7 @@ export default function Star({className, value, width, height, spacing}) {
     const starPlaceholder = [];
     for (let index = 0; index < 5 ; index++) {
         starPlaceholder.push(
-            <div className="star placeholder" key={`starPlaceholder`} style={{ left: index * width, height:height, width: width, marginRight: spacing}}>
+            <div className="star placeholder" key={`starPlaceholder-${index}`} style={{ left: index * width, height:height, width: width, marginRight: spacing}}>
             </div>
         )
     }
