@@ -18,8 +18,6 @@ export default function Hero(props) {
         })
     }
 
-    console.log('window: ', showMostPicked)
-
     return (
         <section className="container" style={{ marginTop: 80}}>
             <div className="row align-item-center">

@@ -106,7 +106,7 @@ section {
 
 .card{
     height: 100%;
-    position: relative;
+
     .tag{
         z-index: 3;
         font-size: 0.875rem;
@@ -133,7 +133,6 @@ section {
 
     .meta-wrapper{
         margin-top: 1rem;
-
         h5{
             font-size: 1.125rem;
             margin-bottom: 2px;
@@ -150,8 +149,7 @@ section {
         cursor: pointer;
         height: 100%;
         border-radius: 15px;
-
-        &::after{
+        &:after{
             position: absolute;
             content: ""; top: 0; right: 0; bottom: 0; left: 0; transform: scale(1.1);
             transition: .5s transform ease-in-out;
@@ -171,7 +169,7 @@ section {
             z-index: 4;
             padding: 20px;
             color: $white;
-            left: 0;
+            top: 0;
             bottom: 0;
             position: absolute;
             width: 100%; transform: translateY(0);
@@ -186,7 +184,7 @@ section {
                 transform: translateY(-10px);
             }
 
-            &::after{
+            &:after{
                 transform: scale(1);
             }
 

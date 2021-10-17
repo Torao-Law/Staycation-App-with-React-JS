@@ -46,7 +46,7 @@ export default function Button(props) {
     }
 
     return (
-    <button className={className.join(" ")} style={props.style}>{props.children}</button>
+    <button className={className.join(" ")} onClick={onClick} style={props.style}>{props.children}</button>
     )
 }
 
