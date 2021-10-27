@@ -1,2 +1,2 @@
-export { default as inputNumber } from "./inputNumber"
-export { default as inputDate } from "./inputDate"
+export { default as InputNumber } from "./inputNumber"
+export { default as InputDate } from "./inputDate"

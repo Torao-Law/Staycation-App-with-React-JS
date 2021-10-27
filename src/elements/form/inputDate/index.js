@@ -7,7 +7,6 @@ import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 
 import formatDate from 'utils/formatDate'
-import IconCalender from '../../../assets/images/icons/ic_calendar.svg'
 
 export default function Date(props) {
     const { value, placeholder, name } = props;
@@ -48,7 +47,7 @@ export default function Date(props) {
         <div className="input-group">
             <div className="input-group-prepent bg-gray-900">
                 <span className="input-group-text">
-                    <img src={IconCalender} alt="icon calender" />
+                    <img src="/images/ic_calendar.svg" alt="icon calender" />
                 </span>
                 <input
                     readOnly
