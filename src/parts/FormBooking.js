@@ -21,22 +21,22 @@ export default class FormBooking extends Component {
     }
 
     updateData = e => {
-        this.setState = {
-            ...this.setState,
+        this.setState({
+            ...this.state,
             data: {
                 ...this.state.data,
                 [e.target.name]: e.target.value
             }
-        }
+        })
     }
 
-    componentDidUpdate(prevProps, prepState) {
+    componentDidUpdate(prevProps, prevState) {
         const { data } = this.state
 
-        if(prepState.data.date !== data.date) {
+        if(prevState.data.date !== data.date) {
             const startDate = new Date(data.date.startDate)
             const endDate = new Date(data.date.endDate)
-            const countDuration = new (endDate-startDate).getDate()
+            const countDuration = new Date(endDate - startDate).getDate()
             this.setState({
                 data: {
                     ...this.state.data,
@@ -45,9 +45,9 @@ export default class FormBooking extends Component {
             })
         }
 
-        if(prepState.data.duration !== data.duration) {
+        if(prevState.data.duration !== data.duration) {
             const startDate = new Date(data.date.startDate)
-            const endDate = new Date(startDate.setDate(startDate.getDate() + +data.duration -1))
+            const endDate = new Date(startDate.setDate(startDate.getDate() + +data.duration - 1))
             this.setState({
                 ...this.state,
                 data: {
