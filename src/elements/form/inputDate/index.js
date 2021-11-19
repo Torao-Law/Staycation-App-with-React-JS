@@ -41,7 +41,8 @@ export default function Date(props) {
         focus.indexOf(1) < 0 && setIsShowed(false)
     }
 
-    const displayDate = `${value.startDate ? formatDate(value.startDate) : ""}${value.endDate ? " - " + formatDate(value.endDate) : ""}`
+    const displayDate = `${value.startDate ? formatDate(value.startDate) : ""}${value.endDate ? " - " + formatDate(value.endDate) : ""
+    }`
 
     return <div ref={refDate} className={["input-date mb-3", props.outerclassName].join(" ")}>
         <div className="input-group">
@@ -77,7 +78,7 @@ export default function Date(props) {
 
 Date.propTypes = {
     value: propTypes.object,
-    onClick: propTypes.func,
+    onChange: propTypes.func,
     placeholder: propTypes.string,
     outerclassName: propTypes.string,
 }

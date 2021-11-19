@@ -5,6 +5,10 @@ import itemDetails from '../json/itemDetails.json'
 import FeaturedImage from 'parts/FeatureImage'
 import DescDetailPage from 'parts/DescDetailPage'
 import FormBooking from 'parts/FormBooking'
+import Testimony from 'parts/Testimony'
+import Categories from 'parts/Categories'
+import Footer from 'parts/Footer'
+import { Fade } from 'react-reveal'
 
 export class detailPage extends Component {
     componentDidMount() {
@@ -21,18 +25,25 @@ export class detailPage extends Component {
         return (
             <>
                 <Header {...this.props} />
-                <TitleDetailPage breadcrumb={breadcrumbList} data={itemDetails}></TitleDetailPage>
+                <TitleDetailPage breadcrumb={breadcrumbList} data={itemDetails}/>
                 <FeaturedImage data={itemDetails.imageUrls}></FeaturedImage>
                 <section className="container">
                     <div className="row">
+                        <Fade bottom>
                         <div className="col-7 pr-5">
-                            <DescDetailPage data={itemDetails}></DescDetailPage>
+                            <DescDetailPage data={itemDetails}/>
                         </div>
                         <div className="col-5">
-                            <FormBooking itemDetails={itemDetails}></FormBooking>
+                            <FormBooking itemDetails={itemDetails}/>
                         </div>
+                        </Fade>
                     </div>
                 </section>
+
+                <Categories data={itemDetails.categories} />
+                <Testimony data={itemDetails.testimonial}/>
+
+                <Footer />
             </>
         )
     }

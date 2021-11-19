@@ -1,19 +1,22 @@
 import React, { Component } from 'react'
 
-import Breadcrumb from "../elements/Breadcrumb/index"
+import { InputNumber } from 'elements/form';
 
 export default class Example extends Component{
-    render() {
-        const breadcrumbList = [
-            {pageTitle: "Home", pageHref:""},
-            {pageTitle: "House Details", pageHref:""},
-        ]
+    state = {
+        value: "1",
+    }
 
+    handleChange = e => {
+        this.setState({ [e.target.name]: e.target.value})
+    }
+
+    render() {
         return(
             <div className="container">
                 <div className="row align-items-center justify-content-center" style={{ height: "70vh" }}>
                     <div className="col-auto">
-                        <Breadcrumb data={breadcrumbList} />
+                        <InputNumber max={30} suffix=" night" isSuffixPlural onChange={this.handleChange} name="value" value={this.state.value} />
                     </div>
                 </div>
             </div>

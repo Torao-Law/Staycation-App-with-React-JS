@@ -3,7 +3,6 @@ import propTypes from 'prop-types'
 
 import Button from 'elements/Button'
 import { InputDate, InputNumber } from 'elements/form'
-// import itemDetails from '../json/itemDetails.json'
 
 export default class FormBooking extends Component {
     constructor(props) {
@@ -53,7 +52,7 @@ export default class FormBooking extends Component {
                 data: {
                     ...this.state.data,
                     date: {
-                        ...this.state.date,
+                        ...this.state.data.date,
                         endDate: endDate,
                     }
                 }
@@ -75,10 +74,20 @@ export default class FormBooking extends Component {
                 </h5>
 
                 <label htmlFor="duration">How long will you stay ?</label>
-                <InputNumber max={30} suffix={" night"} isSuffixPlural onChange={this.updateData} name="duration" value={data.duration} />
+                <InputNumber
+                    max={30}
+                    suffix={" night"}
+                    isSuffixPlural
+                    onChange={this.updateData}
+                    name="duration"
+                    value={data.duration} />
 
                 <label htmlFor="date">Pick a date ?</label>
-                <InputDate  max={30} onChange={this.updateData} name="name" value={data.date} />
+                <InputDate
+                    max={30}
+                    onChange={this.updateData}
+                    name="name"
+                    value={data.date} />
 
                 <h6 className="text-gray-500 font-weight-light" style={{ marginBottom: 40 }}>
                     You will pay{" "}
