@@ -3,12 +3,22 @@ import propTypes from 'prop-types'
 import './index.scss'
 
 export default function InputText(props) {
-    const {name, type, value, prepend, append, outerClassName, inputClassName, placeholder, errorResponse} = props;
+    const {
+        value,
+        type,
+        placeholder,
+        name,
+        prepend,
+        append,
+        outerClassName,
+        inputClassName,
+        errorResponse,
+      } = props;
 
-    const [ HasError, setHasError] = useState(null)
+    const [HasError, setHasError] = useState(null)
     let pattern = ""
     if(type === "email") pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if(type === "telp") pattern = "[0-9]*";
+    if(type === "tel") pattern = "[0-9]*";
 
     const onChange = (event) => {
         const target = {
@@ -20,12 +30,14 @@ export default function InputText(props) {
 
         if(type === "email") {
             if(!pattern.test(event.target.value)) setHasError(errorResponse)
-            else setHasError("");
+            else setHasError(null);
         }
 
-        if(type === "telp") {
+        if(type === "tel") {
             if(event.target.validity.valid) props.onChange(target)
-            else props.onChange(target)
+            else {
+            props.onChange(target)
+            }
         }
     }
 
@@ -48,7 +60,7 @@ export default function InputText(props) {
                 />
                 {append && (
                     <div className="input-group-prepend bg-gray-900">
-                        <span className="input-group-text">{prepend}</span>
+                        <span className="input-group-text">{append}</span>
                     </div>
                 )}
             </div>

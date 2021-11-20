@@ -4,21 +4,21 @@ import './index.scss'
 import { Fade } from 'react-reveal'
 
 export default function Numbering({ style, className, data, current}) {
-    const KeyOfData = Object.keys(data)
+    const KeysOfData = Object.keys(data)
 
     return (
         <Fade>
             <ol className={["stepper", className].join(" ")} style={style}>
-                { KeyOfData.map((list, index) => {
-                    let isActive = list === current ? "active" : ""
-                    if(index + 1 === KeyOfData.length) {
+                {KeysOfData.map((list, index) => {
+                    let isActive = list === current ? "active" : "";
+                    if(index + 1 === KeysOfData.length) {
                         isActive = "";
-                        return null
+                        return null;
                     }
 
                     return (
                         <li key={`list-${index}`} className={[isActive].join(" ")}>
-                            {index+1}
+                            {index + 1}
                         </li>
                     )
                 })

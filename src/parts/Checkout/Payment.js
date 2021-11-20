@@ -5,16 +5,17 @@ import LogoBCA from "../../assets/images/logo_bank_bca.png"
 import LogoMandiri from "../../assets/images/logo_bank_mandiri.png"
 
 export default function Payment(props) {
-    const { data, itemDetails } = props;
+    const { data, ItemDetails, checkout } = props;
 
     const tax = 10;
-    const subTotal = itemDetails.price * itemDetails.duration
+    const subTotal = ItemDetails.price * checkout.duration
     const grandTotal = (subTotal * tax) / 100 + subTotal
 
     return (
         <Fade>
             <div className="container" style={{ marginBottom: 30 }}>
                 <div className="row justify-content-center align-item-center">
+
                     <div className="col-5 border-right py-5" style={{ marginRight: 80 }}>
                         <Fade delay={300}>
                             <p className="mb-4">Transfer Pembayaran :</p>
@@ -49,7 +50,7 @@ export default function Payment(props) {
                         </Fade>
                     </div>
 
-                    <div className="col-5 py-5" style={{ marginLeft: 80 }}>
+                    <div className="col-5 py-5" style={{ paddingLeft: 80 }}>
                         <Fade delay={600}>
                             <label htmlFor="proofPayment">Upload Bukti Transfer</label>
                             <InputFile accept="image/*" id="proofPayment" name="proofPayment" value={data.proofPayment} onChange={props.onChange} />

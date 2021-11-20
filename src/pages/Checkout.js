@@ -9,7 +9,7 @@ import BookingFormInformation from 'parts/Checkout/BookingFormInformation'
 import Payment from 'parts/Checkout/Payment'
 import Completed from 'parts/Checkout/Completed'
 
-import itemDetails from '../json/itemDetails.json'
+import ItemDetails from '../json/itemDetails.json'
 
 export default class Checkout extends Component {
     state = {
@@ -29,7 +29,7 @@ export default class Checkout extends Component {
             data: {
                 ...this.state.data,
                 [event.target.name]: event.target.value,
-            }
+            },
         })
     }
 
@@ -52,7 +52,7 @@ export default class Checkout extends Component {
                     <BookingFormInformation
                         data={data}
                         checkout={checkout}
-                        itemDetails={itemDetails}
+                        ItemDetails={ItemDetails}
                         onChange={this.onChange}
                     />
                 )
@@ -65,7 +65,7 @@ export default class Checkout extends Component {
                     <Payment
                         data={data}
                         checkout={checkout}
-                        itemDetails={itemDetails}
+                        itemDetails={ItemDetails}
                         onChange={this.onChange}
                     />
                 )
@@ -83,8 +83,7 @@ export default class Checkout extends Component {
               <Header isCentered />
 
               <Stepper steps={steps}>
-                  {
-                      (prevStep, nextStep, CurrentStep, steps) => (
+                  {(prevStep, nextStep, CurrentStep, steps) => (
                           <>
                             <Numbering data={steps} current={CurrentStep} style={{ marginBottom: 50}}/>
 
@@ -92,7 +91,7 @@ export default class Checkout extends Component {
 
                             <MainContent data={steps} current={CurrentStep}/>
 
-                            { CurrentStep === "BookingInformation" && (
+                            { CurrentStep === "bookingInformation" && (
                                 <Controller>
                                     {data.firstName !== "" &&
                                         data.lastName !== "" &&
@@ -104,7 +103,7 @@ export default class Checkout extends Component {
                                                 </Button>
                                             </Fade>
                                         )}
-                                        <Button className="btn" type="link" isBlock isLight href={`/properties/${itemDetails._id}`} onClick={prevStep}>Cancel</Button>
+                                        <Button className="btn" type="link" isBlock isLight href={`/properties/${ItemDetails._id}`} onClick={prevStep}>Cancel</Button>
                                 </Controller>
                             )
                             }

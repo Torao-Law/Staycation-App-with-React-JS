@@ -1,8 +1,9 @@
 import React from 'react'
 import { Fade } from 'react-reveal'
-import InputText from 'elements/form/InputText'
+import { InputText } from 'elements/form'
+
 export default function BookingFormInformation(props) {
-    const { data, itemDetails, checkout} = props
+    const {data, ItemDetails, checkout} = props
 
     return (
         <Fade>
@@ -12,24 +13,22 @@ export default function BookingFormInformation(props) {
                         <Fade delay={300}>
                             <div className="card">
                                 <figure className="img-wrapper" style={{ height: 270 }}>
-                                    <img src={itemDetails.imageUrls[0].url} alt={itemDetails.name} className="img-cover" />
+                                    <img src={ItemDetails.imageUrls[0].url} alt={ItemDetails.name} className="img-cover" />
                                 </figure>
-                                <div className="row align-item-center">
+                                <div className="row align-items-center">
                                     <div className="col">
                                         <div className="meta-wrapper">
-                                            <h5>{itemDetails.name}</h5>
+                                            <h5>{ItemDetails.name}</h5>
                                             <span className="text-gray-500">
-                                                {itemDetails.city}, {itemDetails.country}
+                                                {ItemDetails.city}, {ItemDetails.country}
                                             </span>
                                         </div>
                                     </div>
                                     <div className="col-auto">
                                         <span>
-                                            ${+checkout.duration * itemDetails.price} USD
-                                            <span className="text-gray-500">
-                                                per
-                                            </span>
-                                            {checkout.duration}{itemDetails.unit}
+                                            ${+checkout.duration * ItemDetails.price} USD
+                                            <span className="text-gray-500"> per </span>
+                                            {checkout.duration} {ItemDetails.unit}
                                             {+checkout.duration > 1 ? "s": ""}
                                         </span>
                                     </div>
@@ -50,7 +49,7 @@ export default function BookingFormInformation(props) {
                             <InputText id="email" name="email" type="email" value={data.email} onChange={props.onChange}/>
 
                             <label htmlFor="phone">Telphone</label>
-                            <InputText id="phone" name="phone" type="telp" value={data.phone} onChange={props.onChange}/>
+                            <InputText id="phone" name="phone" type="tel" value={data.phone} onChange={props.onChange}/>
                         </Fade>
                     </div>
                 </div>

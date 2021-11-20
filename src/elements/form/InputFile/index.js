@@ -15,7 +15,7 @@ export default function InputFile(props) {
                         <span className="input-group-text">{prepend}</span>
                     </div>
                 )}
-                <input accept={accept} ref={refInputFile} name={name} className="d-none" type="file" value={value} onChange={props.valueonChange} />
+                <input accept={accept} ref={refInputFile} name={name} className="d-none" type="file" value={value} onChange={props.onChange} />
                 <input onClick={() => refInputFile.current.click()} defaultValue={value} placeholder={placeholder} className={["form-control", inputClassName].join(" ")} />
                 {append && (
                     <div className="input-group-append bg-gray-900">
