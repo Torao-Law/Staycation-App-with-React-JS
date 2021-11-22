@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import propTypes from 'prop-types'
 import './index.scss'
 
-export default function InputText(props) {
+export default function Text(props) {
     const {
         value,
         type,
@@ -25,7 +25,7 @@ export default function InputText(props) {
             target: {
                 name: name,
                 value: event.target.value,
-            }
+            },
         }
 
         if(type === "email") {
@@ -35,10 +35,9 @@ export default function InputText(props) {
 
         if(type === "tel") {
             if(event.target.validity.valid) props.onChange(target)
-            else {
+        } else {
             props.onChange(target)
             }
-        }
     }
 
     return (
@@ -69,14 +68,14 @@ export default function InputText(props) {
     )
 }
 
-InputText.defaultProps = {
+Text.defaultProps = {
     type: "text",
     pattern: "",
     placeholder: "Please type here...",
     errorResponse: "Please match the request format.",
 }
 
-InputText.propTypes = {
+Text.propTypes = {
     name: propTypes.string.isRequired,
     value: propTypes.oneOfType([propTypes.number, propTypes.string]).isRequired,
     onChange: propTypes.func.isRequired,

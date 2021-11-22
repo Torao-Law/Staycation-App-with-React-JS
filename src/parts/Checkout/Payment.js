@@ -1,6 +1,8 @@
 import React from 'react'
 import { Fade } from 'react-reveal'
+
 import { InputText, InputFile} from 'elements/form'
+
 import LogoBCA from "../../assets/images/logo_bank_bca.png"
 import LogoMandiri from "../../assets/images/logo_bank_mandiri.png"
 
@@ -16,7 +18,7 @@ export default function Payment(props) {
             <div className="container" style={{ marginBottom: 30 }}>
                 <div className="row justify-content-center align-item-center">
 
-                    <div className="col-5 border-right py-5" style={{ marginRight: 80 }}>
+                    <div className="col-5 border-right py-5" style={{ paddingRight: 80 }}>
                         <Fade delay={300}>
                             <p className="mb-4">Transfer Pembayaran :</p>
                             <p>Tax : {tax}%</p>

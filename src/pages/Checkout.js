@@ -65,7 +65,7 @@ export default class Checkout extends Component {
                     <Payment
                         data={data}
                         checkout={checkout}
-                        itemDetails={ItemDetails}
+                        ItemDetails={ItemDetails}
                         onChange={this.onChange}
                     />
                 )
@@ -85,6 +85,7 @@ export default class Checkout extends Component {
               <Stepper steps={steps}>
                   {(prevStep, nextStep, CurrentStep, steps) => (
                           <>
+
                             <Numbering data={steps} current={CurrentStep} style={{ marginBottom: 50}}/>
 
                             <Meta data={steps} current={CurrentStep}/>
@@ -107,6 +108,36 @@ export default class Checkout extends Component {
                                 </Controller>
                             )
                             }
+
+                            {CurrentStep === "payment" && (
+                                <Controller>
+                                {data.proofPayment !== "" &&
+                                    data.bankName !== "" &&
+                                    data.bankHolder !== "" && (
+                                    <Fade>
+                                        <Button
+                                        className="btn mb-3"
+                                        type="button"
+                                        isBlock
+                                        isPrimary
+                                        hasShadow
+                                        onClick={nextStep}
+                                        >
+                                        Continue to Book
+                                        </Button>
+                                    </Fade>
+                                    )}
+                                <Button
+                                    className="btn"
+                                    type="button"
+                                    isBlock
+                                    isLight
+                                    onClick={prevStep}
+                                >
+                                    Cancel
+                                </Button>
+                                </Controller>
+                            )}
 
                             {CurrentStep === "completed" && (
                                 <Controller>
